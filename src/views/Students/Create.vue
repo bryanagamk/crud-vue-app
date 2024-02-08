@@ -55,7 +55,7 @@ export default {
     methods: {
         saveStudent() {
             var myThis = this
-            axios.post('http://localhost:3000/students', this.model.student)
+            axios.post('http://localhost:8080/students', this.model.student)
                 .then(res => {
                     console.log(res.data);
 

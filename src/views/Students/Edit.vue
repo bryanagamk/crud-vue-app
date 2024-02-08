@@ -59,19 +59,19 @@ export default {
     },
     methods: {
         getStudentData(studentId){
-            axios.get(`http://localhost:3000/students/${studentId}`)
+            axios.get(`http://localhost:8080/students/${studentId}`)
             .then(res => {
                 console.log(res.data);
 
-                this.model.student.name = res.data.name
-                this.model.student.course = res.data.course
-                this.model.student.email = res.data.email
-                this.model.student.phone = res.data.phone
+                this.model.student.name = res.data.data.name
+                this.model.student.course = res.data.data.course
+                this.model.student.email = res.data.data.email
+                this.model.student.phone = res.data.data.phone
             })
         },
         updateStudent() {
             var myThis = this
-            axios.patch(`http://localhost:3000/students/${this.studentId}`, this.model.student)
+            axios.patch(`http://localhost:8080/students/${this.studentId}`, this.model.student)
                 .then(res => {
                     console.log(res.data);
 
