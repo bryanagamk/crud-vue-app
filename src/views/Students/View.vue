@@ -53,14 +53,14 @@ export default {
     },
     methods: {
         getStudents() {
-            axios.get('http://localhost:3000/students').then(res => {
-                this.students = res.data
+            axios.get('http://localhost:8080/students').then(res => {
+                this.students = res.data.data
                 console.log(res.data);
             });
         },
         deleteStudent(id) {
             if (confirm('Are you sure, you want to delete this data?')) {
-                axios.delete(`http://localhost:3000/students/${id}`)
+                axios.delete(`http://localhost:8080/students/${id}`)
                     .then(res => {
                         // this.students = res.data
                         // alert(res.data.message)
