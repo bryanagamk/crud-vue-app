@@ -55,7 +55,7 @@ export default {
         getStudents() {
             axios.get('http://localhost:8080/students').then(res => {
                 this.students = res.data.data
-                console.log(res.data);
+                console.log(res.data.data);
             });
         },
         deleteStudent(id) {
@@ -64,6 +64,7 @@ export default {
                     .then(res => {
                         // this.students = res.data
                         // alert(res.data.message)
+                        console.log(res.data.data);
                         this.getStudents()
                     });
             }
